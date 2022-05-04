@@ -1,19 +1,69 @@
 
-<p-toolbar>
-    <div class="formgrid grid">
-        <div class="field col-10">
+
+
+
+    
+    
+       <!--<div class="field col-10">
             <input type="text" class="p-inputtext" [disabled]="true" pInputText [(ngModel)]="password" >
+        </div>-->
+       
+    
+
+
+<div class="grid">
+    <div class="col-12 md:col-6 md:col-offset-3">
+        <p-card >
+            <div class="grid">
+
+                <p class="col-9 text-2xl">{{ password }}</p>
+       
+                <button pButton class="col-1 p-button-text p-button-plain" icon="pi pi-clone"></button>
+                <button pButton class="col-1 p-button-text p-button-plain" icon="pi pi-refresh"></button>
+                
+          
+
+            </div>
+        </p-card>
+        
+    </div>
+</div>
+
+<div class="grid">
+<div class="col-12 md:col-6 md:col-offset-3">
+    <p-card>
+        <div class="grid">
+
+        <div class="col-12 md:col-6">
+            <h5>longitud de contrasena: {{caracteres}}</h5>
+            <p-slider [(ngModel)]="caracteres" (onChange)="onSlideChange($event)"></p-slider>
         </div>
-        <div class="field col-1">
-            <button pButton pRipple type="button" icon="pi pi-copy" class="p-button-rounded p-button-text"></button>
-        </div>
-        <div class="field col-1 ml-1">
-            <button pButton pRipple type="button" icon="pi pi-refresh" class="p-button-rounded p-button-text"></button>
+
+        <div class="col-12 md:col-6 pl-6">
+            <h5>Opciones</h5>
+            <div class="field-checkbox">
+                <p-checkbox name="group1" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ" [(ngModel)]="selectedOptions" inputId="may"
+                (onChange)="onCheckboxSelect()"></p-checkbox>
+                <label for="may">Mayusculas</label>
+            </div>
+            <div class="field-checkbox">
+                <p-checkbox name="group1" value="abcdefghijklmnopqrstuvwxyz" [(ngModel)]="selectedOptions" inputId="min"
+                (onChange)="onCheckboxSelect()"></p-checkbox>
+                <label for="min">Minusculas</label>
+            </div>
+            <div class="field-checkbox">
+                <p-checkbox name="group1" value="0123456789" [(ngModel)]="selectedOptions" inputId="num"
+                (onChange)="onCheckboxSelect()"></p-checkbox>
+                <label for="num">Numeros</label>
+            </div>
+            <div class="field-checkbox">
+                <p-checkbox name="group1" value="!@#$%^&*()_+-=?./;'[]{}" [(ngModel)]="selectedOptions" inputId="sim"
+                (onChange)="onCheckboxSelect()"></p-checkbox>
+                <label for="sim">Simbolos</label>
+            </div>
         </div>
     </div>
-</p-toolbar>
-
-<p-card>
-    
-</p-card>
+    </p-card>
+    </div>
+</div>
 
