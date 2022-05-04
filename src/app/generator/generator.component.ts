@@ -20,22 +20,19 @@ export class GeneratorComponent implements OnInit {
   }
 
   onCheckboxSelect() {
-    //console.log('INGRESA O NO INGRESA');
     console.log( this.selectedOptions );
-    this.password = '';
     this.randomize();
   }
 
   onSlideChange(e: any) {
-      //console.log(e.value);
       this.caracteres = e.value;
-      this.password = '';
       this.randomize();
   }
 
   randomize() {
 
     let chara: string = '';
+    this.password = '';
 
     if( this.selectedOptions.length ){
       chara = this.selectedOptions.toString().replace(/,/g,'');
