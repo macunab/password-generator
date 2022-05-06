@@ -13,3 +13,9 @@ html, body {
     overflow: hidden;
     display: inline;
 }
+
+
+.customProgress .p-progressbar-value {
+    background: #ef5439;
+    color: #fff;
+  } 

@@ -10,9 +10,10 @@ import { MessageService } from 'primeng/api';
 export class GeneratorComponent implements OnInit {
 
   password: string = 'Aca va el  password generado';
-  caracteres: number = 10;
+  caracteres: number = 20;
   selectedOptions: string[] = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
   randomSelected: string = '';
+  passwordStrong: number = 100;
 
   constructor( private messages: MessageService ) { }
 
@@ -29,6 +30,32 @@ export class GeneratorComponent implements OnInit {
   onSlideChange(e: any) {
       this.caracteres = e.value;
       this.randomize();
+      switch(true) {
+        case this.caracteres < 20 && this.caracteres > 15:
+          this.passwordStrong = 75;
+          break;
+        case this.caracteres < 16 && this.caracteres > 10:
+          this.passwordStrong = 50;
+          break;
+        case this.caracteres < 11 && this.caracteres > 5 :
+          this.passwordStrong = 25;
+          break;
+        case this.caracteres < 5:
+          this.passwordStrong = 0;
+          break;  
+        case this.caracteres > 5 && this.caracteres < 11:
+          this.passwordStrong = 25;
+          break;
+        case this.caracteres > 10 && this.caracteres < 16:
+          this.passwordStrong = 50;
+          break;
+        case this.caracteres > 15 && this.caracteres < 20:
+          this.passwordStrong = 75;
+          break;
+        case this.caracteres > 19:
+          this.passwordStrong = 100;
+          break;  
+      }
   }
 
   // genero el password

@@ -14,6 +14,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MessageService } from 'primeng/api';
     FormsModule,
     ButtonModule,
     ToastModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ProgressBarModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
