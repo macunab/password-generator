@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 html, body {
     margin: 10px;
     background-color: var( --surface-b );
@@ -14,8 +15,18 @@ html, body {
     display: inline;
 }
 
+.green .p-progressbar .p-progressbar-value {
+    background: #368149;
+  }
 
-.customProgress .p-progressbar-value {
-    background: #ef5439;
-    color: #fff;
-  } 
+.light-green .p-progressbar .p-progressbar-value {
+    background: rgb(0, 168, 120);
+}
+
+.light-warning .p-progressbar .p-progressbar-value {
+    background: rgb(239, 194, 15);
+}
+
+.danger .p-progressbar .p-progressbar-value {
+    background: rgb(223, 102, 97);
+}

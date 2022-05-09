@@ -1,21 +1,9 @@
-
 <div class="grid">
     <div class="col-12 md:col-6 md:col-offset-3">
         <p-card>
             <div>
-            <!--<div class="grid">
-
-                <p class="col-9 text-2xl pass">{{ password }}</p>
-       
-                <button pButton class="col-1 p-button-sm p-button-text p-button-secondary" icon="pi pi-clone"
-                 (click)="copyPassword()"></button>
-                <button pButton class="col-1 p-button-text p-button-secondary" icon="pi pi-refresh"
-                    (click)="randomize()"></button>
-            </div>-->
             <div class="flex">
-
                 <p class="flex-grow-1 flex align-items-center justify-content-start text-2xl pass">{{ password }}</p>
-       
                 <button pButton title="Copiar" class="flex-none flex align-items-center justify-content-center p-button-sm p-button-text p-button-secondary" icon="pi pi-clone"
                  (click)="copyPassword()"></button>
                 <button pButton title="Refrescar" class="flex-none flex align-items-center justify-content-center p-button-text p-button-secondary" icon="pi pi-refresh"
@@ -24,7 +12,7 @@
            
         </div>
         <ng-template pTemplate="footer">
-            <p-progressBar [value]="passwordStrong" [showValue]="false" styleClass="customProgress"></p-progressBar>
+            <p-progressBar [value]="passwordStrong" [showValue]="false" [ngClass]="progressbar"></p-progressBar>
         </ng-template>
         </p-card>
         
@@ -38,7 +26,7 @@
 
         <div class="col-12 md:col-6">
             <h5>longitud de contrasena: {{caracteres}}</h5>
-            <p-slider [(ngModel)]="caracteres" (onChange)="onSlideChange($event)"></p-slider>
+            <p-slider [(ngModel)]="caracteres" (onChange)="onSlideChange($event)" [min]="1"></p-slider>
         </div>
 
         <div class="col-12 md:col-6 pl-6">
@@ -59,7 +47,7 @@
                 <label for="num">Numeros</label>
             </div>
             <div class="field-checkbox">
-                <p-checkbox name="group1" value="!@#$%^&*()_+-=?./;'[]{}" [(ngModel)]="selectedOptions" inputId="sim"
+                <p-checkbox name="group1" value="!@#$%^&*()_+=/'[]{}" [(ngModel)]="selectedOptions" inputId="sim"
                 (onChange)="onCheckboxSelect()"></p-checkbox>
                 <label for="sim">Simbolos</label>
             </div>
